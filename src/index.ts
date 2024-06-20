@@ -47,12 +47,17 @@ const init = async () => {
     return server.swagger();
   });
 
-  server.listen({ port: Number(process.env.PORT || 8080) }, (err, address) => {
-    if (err) {
-      server.log.error(err);
-      process.exit(1);
-    }
-    console.log(`Server listening at ${address}`);
-  });
+  server.listen(
+    {
+      port: Number(process.env.PORT || 8080),
+      host: String(process.env.HOST || "localhost"),
+    },
+    (err) => {
+      if (err) {
+        server.log.error(err);
+        process.exit(1);
+      }
+    },
+  );
 };
 init();
