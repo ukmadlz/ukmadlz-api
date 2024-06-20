@@ -5,6 +5,7 @@ export default async function (fastify: FastifyInstance) {
     "/ping",
     {
       schema: {
+        operationId: "ping",
         response: {
           200: {
             description: "Pong if it worked",

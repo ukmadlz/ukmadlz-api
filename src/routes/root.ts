@@ -5,6 +5,7 @@ export default async function (fastify: FastifyInstance) {
     "/",
     {
       schema: {
+        operationId: "api-root",
         response: {
           200: {
             description:
