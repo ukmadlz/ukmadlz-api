@@ -50,7 +50,7 @@ const init = async () => {
   server.listen(
     {
       port: Number(process.env.PORT || 8080),
-      host: String(process.env.HOST || "localhost"),
+      host: String(process.env.PORT ? "0.0.0.0" : "127.0.0.1"),
     },
     (err) => {
       if (err) {
