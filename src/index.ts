@@ -1,3 +1,4 @@
+import Package from "../package.json";
 import Fastify from "fastify";
 import FastifyAPIReference from "@scalar/fastify-api-reference";
 import FastifySwagger from "@fastify/swagger";
@@ -5,12 +6,6 @@ import Path from "path";
 import FastifyAutoload from "@fastify/autoload";
 
 const init = async () => {
-  const { default: Package } = await import("../package.json", {
-    assert: {
-      type: "json",
-    },
-  });
-
   const server = Fastify({
     logger: true,
   });
