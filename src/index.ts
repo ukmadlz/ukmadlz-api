@@ -1,4 +1,4 @@
-import Package from "../package.json";
+import Package from "./package.json";
 import Fastify from "fastify";
 import FastifyAPIReference from "@scalar/fastify-api-reference";
 import FastifySwagger from "@fastify/swagger";

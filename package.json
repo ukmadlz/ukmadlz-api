@@ -1,10 +1,12 @@
 {
   "name": "ukmadlz-api",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "The API for Mike Elsmore",
   "main": "dist/index.js",
   "scripts": {
+    "prebuild:dev": "npm run prebuild",
     "build:dev": "tsc --pretty -w -p tsconfig.json",
+    "prebuild": "npx -y cpx ./package.json ./src",
     "build": "tsc -p tsconfig.json",
     "start": "node dist/index.js"
   },
