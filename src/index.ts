@@ -29,12 +29,6 @@ const init = async () => {
           description: "Production server",
         },
       ],
-      tags: [],
-      components: {},
-      externalDocs: {
-        url: "https://swagger.io",
-        description: "Find more info here",
-      },
     },
   });
   server.register(FastifyAutoload, {
