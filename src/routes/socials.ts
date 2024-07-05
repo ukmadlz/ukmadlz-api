@@ -1,5 +1,16 @@
 import { FastifyInstance } from "fastify/types/instance";
 
+type Social = {
+  id: String;
+  name: String;
+  link: String;
+};
+type SocialList = Array<Social>;
+type SocialResponse = {
+  data: SocialList;
+  generated: Date;
+};
+
 export default async function (fastify: FastifyInstance) {
   fastify.get(
     "/socials",
@@ -34,7 +45,7 @@ export default async function (fastify: FastifyInstance) {
         },
       },
     },
-    () => {
+    (): SocialResponse => {
       return {
         data: [
           {
