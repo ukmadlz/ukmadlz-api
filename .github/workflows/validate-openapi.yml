@@ -1,0 +1,24 @@
+name: Validate OpenAPI file
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  validate_oas:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+      - name: install
+        run: npm install
+      - name: build project
+        run: npm run build
+      - name: generate OAS file
+        run: npm run generate:oas
+      - name: ApiDOM Validator
+        uses: char0n/apidom-validate@v1.2.0
+        with:
+          definition-file: "./openapi.yml"
+          fails-on: 2

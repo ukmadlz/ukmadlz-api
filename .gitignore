@@ -131,3 +131,4 @@ dist
 
 # A little deploy hackery
 src/package.json
+openapi.yml
