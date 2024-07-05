@@ -40,7 +40,8 @@ export default async function (fastify: FastifyInstance) {
                 },
               },
               generated: {
-                type: "number",
+                type: "string",
+                format: "date-time",
               },
             },
           },

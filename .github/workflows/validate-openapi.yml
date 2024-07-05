@@ -17,6 +17,8 @@ jobs:
         run: npm run build
       - name: generate OAS file
         run: npm run generate:oas
+      - name: validate file was created
+        run: cat ./openapi.yml
       - name: ApiDOM Validator
         uses: char0n/apidom-validate@v1.2.0
         with:
