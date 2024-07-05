@@ -25,15 +25,17 @@ export default async function (fastify: FastifyInstance) {
             properties: {
               data: {
                 type: "array",
-                properties: {
-                  id: {
-                    type: "string",
-                  },
-                  name: {
-                    type: "string",
-                  },
-                  link: {
-                    type: "string",
+                items: {
+                  properties: {
+                    id: {
+                      type: "string",
+                    },
+                    name: {
+                      type: "string",
+                    },
+                    link: {
+                      type: "string",
+                    },
                   },
                 },
               },
