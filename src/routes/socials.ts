@@ -40,7 +40,7 @@ export default async function (fastify: FastifyInstance) {
                 },
               },
               generated: {
-                type: "string",
+                type: "number",
               },
             },
           },
